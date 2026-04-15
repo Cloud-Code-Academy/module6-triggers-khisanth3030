@@ -5,11 +5,13 @@ trigger OpportunityTrigger on Opportunity (Before Insert ,Before Update , After 
         }
         when BEFORE_UPDATE {
             // call your before update handler
-            
+            OppUtil.amountValidate(Trigger.new);
+            OppUtil.setPrimaryContact(Trigger.new);
         }
         when BEFORE_DELETE {
             // call your before delete handler
-            
+            System.debug(Trigger.old);
+            OppUtil.deleteClosedWonOpp(Trigger.old);
         }
         when AFTER_INSERT {
             // call your after insert handler
