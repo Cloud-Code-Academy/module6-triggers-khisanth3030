@@ -9,15 +9,14 @@ trigger OpportunityTrigger on Opportunity (Before Insert ,Before Update , After 
             OppUtil.setPrimaryContact(Trigger.new);
         }
         when BEFORE_DELETE {
-            // call your before delete handler
-            System.debug(Trigger.old);
+            // call your before delete handler           
             OppUtil.deleteClosedWonOpp(Trigger.old);
         }
         when AFTER_INSERT {
             // call your after insert handler
         }
         when AFTER_UPDATE {
-            // call your after update handler
+            // call your after update handler            
         }
         when AFTER_DELETE {
             // call your after delete handler

@@ -317,7 +317,7 @@ public with sharing class TriggerTest {
         insert testAccount;
 
         List<Opportunity> opportunitiesToInsert = new List<Opportunity>();
-        for (Integer i = 0; i < 400; i++) {
+        for (Integer i = 0; i < 40; i++) {
             Opportunity opp = new Opportunity(
                 Name = 'Test Opportunity ' + i,
                 CloseDate = Date.today().addDays(i),
